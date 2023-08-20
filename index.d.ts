@@ -60,9 +60,11 @@ declare module 'react-native-callkeep' {
 
   type HandleType = 'generic' | 'number' | 'email';
 
+  type AudioRouteType = 'Phone' | 'Speaker' | 'Bluetooth' | 'Headset' | 'CarAudio'
+
   export type AudioRoute = {
-    name: string,
-    type: string,
+    name: AudioRouteType,
+    type: AudioRouteType,
     selected?: boolean
   }
 
@@ -222,7 +224,7 @@ declare module 'react-native-callkeep' {
       outgoing: boolean
     }[] | void>
 
-    static getAudioRoutes(): Promise<void>
+    static getAudioRoutes(uuid?:string): Promise<AudioRoute[]>
 
     static setAudioRoute: (uuid: string, inputName: string) => Promise<void>
 
@@ -242,13 +244,6 @@ declare module 'react-native-callkeep' {
      * @description setMutedCall method is available only on iOS.
      */
     static setMutedCall(uuid: string, muted: boolean): void
-
-    /**
-     * @description toggleAudioRouteSpeaker method is available only on Android.
-     * @param uuid
-     * @param routeSpeaker
-     */
-    static toggleAudioRouteSpeaker(uuid: string, routeSpeaker: boolean): void
 
     static setOnHold(uuid: string, held: boolean): void
 

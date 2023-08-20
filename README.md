@@ -211,41 +211,42 @@ Self Managed calling apps are an advanced topic, and there are many steps involv
 
 # API
 
-| Method                                                            | Return Type         |  iOS | Android |
-| ----------------------------------------------------------------- | ------------------- | :--: | :-----: |
-| [getInitialEvents()](#getInitialEvents)                           | `Promise<String[]>` |  ✅  |   ✅    |
-| [clearInitialEvents()](#clearInitialEvents)                       | `void>`             |  ✅  |   ✅    |
-| [setAvailable()](#setAvailable)                                   | `Promise<void>`     |  ❌  |   ✅    |
-| [setForegroundServiceSettings()](#setForegroundServiceSettings)   | `Promise<void>`     |  ❌  |   ✅    |
-| [canMakeMultipleCalls()](#canMakeMultipleCalls)                   | `Promise<void>`     |  ❌  |   ✅    |
-| [setCurrentCallActive()](#setCurrentCallActive)                   | `Promise<void>`     |  ❌  |   ✅    |
-| [checkIsInManagedCall()](#setAvailable)                           | `Promise<Boolean>`  |  ❌  |   ✅    |
-| [isCallActive()](#isCallActive)                                   | `Promise<Boolean>`  |  ✅  |   ❌    |
-| [getCalls()](#getCalls)                                           | `Promise<Object[]>` |  ✅  |   ❌    |
-| [displayIncomingCall()](#displayIncomingCall)                     | `Promise<void>`     |  ✅  |   ✅    |
-| [answerIncomingCall()](#answerIncomingCall)                       | `Promise<void>`     |  ✅  |   ✅    |
-| [startCall()](#startCall)                                         | `Promise<void>`     |  ✅  |   ✅    |
-| [updateDisplay()](#updateDisplay)                                 | `Promise<void>`     |  ✅  |   ✅    |
-| [endCall()](#endCall)                                             | `Promise<void>`     |  ✅  |   ✅    |
-| [endAllCalls()](#endAllCalls)                                     | `Promise<void>`     |  ✅  |   ✅    |
-| [rejectCall()](#rejectCall)                                       | `Promise<void>`     |  ✅  |   ✅    |
-| [reportEndCallWithUUID()](#reportEndCallWithUUID)                 | `Promise<void>`     |  ✅  |   ✅    |
-| [setMutedCall()](#setMutedCall)                                   | `Promise<void>`     |  ✅  |   ✅    |
-| [setOnHold()](#setOnHold)                                         | `Promise<void>`     |  ✅  |   ✅    |
-| [setConnectionState()](#setConnectionState)                       | `Promise<void>`     |  ❌  |   ✅    |
-| [checkIfBusy()](#checkIfBusy)                                     | `Promise<Boolean>`  |  ✅  |   ❌    |
-| [checkSpeaker()](#checkSpeaker)                                   | `Promise<Boolean>`  |  ✅  |   ❌    |
-| [toggleAudioRouteSpeaker()](#toggleAudioRouteSpeaker)             | `Promise<void>`     |  ❌  |   ✅    |
-| [supportConnectionService()](#supportConnectionService)           | `Promise<Boolean>`  |  ❌  |   ✅    |
-| [hasPhoneAccount()](#hasPhoneAccount)                             | `Promise<Boolean>`  |  ❌  |   ✅    |
-| [hasOutgoingCall()](#hasOutgoingCall)                             | `Promise<Boolean>`  |  ❌  |   ✅    |
-| [hasDefaultPhoneAccount()](#hasDefaultPhoneAccount)               | `Promise<Boolean>`  |  ❌  |   ✅    |
-| [checkPhoneAccountEnabled()](#checkPhoneAccountEnabled)           | `Promise<Boolean>`  |  ❌  |   ✅    |
-| [isConnectionServiceAvailable()](#isConnectionServiceAvailable)   | `Promise<Boolean>`  |  ❌  |   ✅    |
-| [backToForeground()](#backToForeground)                           | `Promise<void>`     |  ❌  |   ✅    |
-| [removeEventListener()](#removeEventListener)                     | `void`              |  ✅  |   ✅    |
-| [registerPhoneAccount()](#registerPhoneAccount)                   | `void`              |  ❌  |   ✅    |
-| [registerAndroidEvents()](#registerAndroidEvents)                 | `void`              |  ❌  |   ✅    |
+| Method                                                            | Return Type             |  iOS | Android |
+| ----------------------------------------------------------------- | ----------------------- | :--: | :-----: |
+| [getInitialEvents()](#getInitialEvents)                           | `Promise<String[]>`     |  ✅  |   ✅    |
+| [clearInitialEvents()](#clearInitialEvents)                       | `void>`                 |  ✅  |   ✅    |
+| [setAvailable()](#setAvailable)                                   | `Promise<void>`         |  ❌  |   ✅    |
+| [setForegroundServiceSettings()](#setForegroundServiceSettings)   | `Promise<void>`         |  ❌  |   ✅    |
+| [canMakeMultipleCalls()](#canMakeMultipleCalls)                   | `Promise<void>`         |  ❌  |   ✅    |
+| [setCurrentCallActive()](#setCurrentCallActive)                   | `Promise<void>`         |  ❌  |   ✅    |
+| [checkIsInManagedCall()](#setAvailable)                           | `Promise<Boolean>`      |  ❌  |   ✅    |
+| [isCallActive()](#isCallActive)                                   | `Promise<Boolean>`      |  ✅  |   ❌    |
+| [getCalls()](#getCalls)                                           | `Promise<Object[]>`     |  ✅  |   ❌    |
+| [displayIncomingCall()](#displayIncomingCall)                     | `Promise<void>`         |  ✅  |   ✅    |
+| [answerIncomingCall()](#answerIncomingCall)                       | `Promise<void>`         |  ✅  |   ✅    |
+| [startCall()](#startCall)                                         | `Promise<void>`         |  ✅  |   ✅    |
+| [updateDisplay()](#updateDisplay)                                 | `Promise<void>`         |  ✅  |   ✅    |
+| [endCall()](#endCall)                                             | `Promise<void>`         |  ✅  |   ✅    |
+| [endAllCalls()](#endAllCalls)                                     | `Promise<void>`         |  ✅  |   ✅    |
+| [rejectCall()](#rejectCall)                                       | `Promise<void>`         |  ✅  |   ✅    |
+| [reportEndCallWithUUID()](#reportEndCallWithUUID)                 | `Promise<void>`         |  ✅  |   ✅    |
+| [setMutedCall()](#setMutedCall)                                   | `Promise<void>`         |  ✅  |   ✅    |
+| [setOnHold()](#setOnHold)                                         | `Promise<void>`         |  ✅  |   ✅    |
+| [getAudioRoutes()](#getAudioRoutes)                               | `Promise<AudioRoute[]>` |  ✅  |   ✅    |
+| [setAudioRoute()](#setAudioRoute)                                 | `Promise<void>`         |  ✅  |   ✅    |
+| [setConnectionState()](#setConnectionState)                       | `Promise<void>`         |  ❌  |   ✅    |
+| [checkIfBusy()](#checkIfBusy)                                     | `Promise<Boolean>`      |  ✅  |   ❌    |
+| [checkSpeaker()](#checkSpeaker)                                   | `Promise<Boolean>`      |  ✅  |   ❌    |
+| [supportConnectionService()](#supportConnectionService)           | `Promise<Boolean>`      |  ❌  |   ✅    |
+| [hasPhoneAccount()](#hasPhoneAccount)                             | `Promise<Boolean>`      |  ❌  |   ✅    |
+| [hasOutgoingCall()](#hasOutgoingCall)                             | `Promise<Boolean>`      |  ❌  |   ✅    |
+| [hasDefaultPhoneAccount()](#hasDefaultPhoneAccount)               | `Promise<Boolean>`      |  ❌  |   ✅    |
+| [checkPhoneAccountEnabled()](#checkPhoneAccountEnabled)           | `Promise<Boolean>`      |  ❌  |   ✅    |
+| [isConnectionServiceAvailable()](#isConnectionServiceAvailable)   | `Promise<Boolean>`      |  ❌  |   ✅    |
+| [backToForeground()](#backToForeground)                           | `Promise<void>`         |  ❌  |   ✅    |
+| [removeEventListener()](#removeEventListener)                     | `void`                  |  ✅  |   ✅    |
+| [registerPhoneAccount()](#registerPhoneAccount)                   | `void`                  |  ❌  |   ✅    |
+| [registerAndroidEvents()](#registerAndroidEvents)                 | `void`                  |  ❌  |   ✅    |
 
 
 ### getInitialEvents
@@ -569,33 +570,20 @@ Checks if the device speaker is on and returns a promise with a boolean value (`
 RNCallKeep.checkSpeaker();
 ```
 
-### toggleAudioRouteSpeaker
-
-_This feature is available only on Android._
-
-Update the audio route of Audio Service on Android with a `routeSpeaker` boolean value (`true` if speaker need on, `false` otherwise).
-When Phone call is active, Android control the audio via connection service. so this function help to toggle the audio to Speaker or wired/ear-piece or vice-versa 
-
-```js
-RNCallKeep.toggleAudioRouteSpeaker(uuid, true);
-```
-
-- `uuid`: string
-  - uuid of the current call.
-- `routeSpeaker`: boolean
 
 ### getAudioRoutes
 
 Get the list of available audio routes. i.e. bluetooth, wired/ear-piece, speaker and phone.
 
 ```js
-await RNCallKeep.getAudioRoutes(): AudioRoute;
+await RNCallKeep.getAudioRoutes(): AudioRoute[];
 ```
 
 ```
 type AudioRoute = {
     name: string,
-    type: string
+    type: string,
+    selected?: boolean
 }
 ```
 
