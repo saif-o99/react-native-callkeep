@@ -799,6 +799,25 @@ public class RNCallKeepModule extends ReactContextBaseJavaModule implements Life
         }
         conn.onCallAudioStateChanged(newAudioState);
     }
+    /**
+     * toggle audio route for speaker via connection service function
+     * @param uuid
+     * @param routeSpeaker
+     */
+    @ReactMethod
+    public void toggleAudioRouteSpeaker(String uuid, boolean routeSpeaker) {
+        Log.d(TAG, "[RNCallKeepModule] toggleAudioRouteSpeaker, uuid: " + uuid + ", routeSpeaker: " + (routeSpeaker ? "true" : "false"));
+        VoiceConnection conn = (VoiceConnection) VoiceConnectionService.getConnection(uuid);
+        if (conn == null) {
+            Log.w(TAG, "[RNCallKeepModule] toggleAudioRouteSpeaker ignored because no connection found, uuid: " + uuid);
+            return;
+        }
+        if (routeSpeaker) {
+            conn.setAudioRoute(CallAudioState.ROUTE_SPEAKER);
+        } else {
+            conn.setAudioRoute(CallAudioState.ROUTE_EARPIECE);
+        }
+    }
 
     @ReactMethod
     public void setAudioRoute(String uuid, String audioRoute, Promise promise){
