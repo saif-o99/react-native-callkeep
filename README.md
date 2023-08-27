@@ -237,6 +237,7 @@ Self Managed calling apps are an advanced topic, and there are many steps involv
 | [setConnectionState()](#setConnectionState)                       | `Promise<void>`         |  ❌  |   ✅    |
 | [checkIfBusy()](#checkIfBusy)                                     | `Promise<Boolean>`      |  ✅  |   ❌    |
 | [checkSpeaker()](#checkSpeaker)                                   | `Promise<Boolean>`      |  ✅  |   ❌    |
+| [toggleAudioRouteSpeaker()](#toggleAudioRouteSpeaker)             | `Promise<void>`         |  ❌  |   ✅    |
 | [supportConnectionService()](#supportConnectionService)           | `Promise<Boolean>`      |  ❌  |   ✅    |
 | [hasPhoneAccount()](#hasPhoneAccount)                             | `Promise<Boolean>`      |  ❌  |   ✅    |
 | [hasOutgoingCall()](#hasOutgoingCall)                             | `Promise<Boolean>`      |  ❌  |   ✅    |
@@ -569,7 +570,20 @@ Checks if the device speaker is on and returns a promise with a boolean value (`
 ```js
 RNCallKeep.checkSpeaker();
 ```
+### toggleAudioRouteSpeaker
 
+_This feature is available only on Android._
+
+Update the audio route of Audio Service on Android with a `routeSpeaker` boolean value (`true` if speaker need on, `false` otherwise).
+When Phone call is active, Android control the audio via connection service. so this function help to toggle the audio to Speaker or wired/ear-piece or vice-versa
+
+```js
+RNCallKeep.toggleAudioRouteSpeaker(uuid, true);
+```
+
+- `uuid`: string
+  - uuid of the current call.
+- `routeSpeaker`: boolean
 
 ### getAudioRoutes
 

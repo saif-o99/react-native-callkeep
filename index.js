@@ -243,6 +243,13 @@ class RNCallKeep {
   };
 
   sendDTMF = (uuid, key) => RNCallKeepModule.sendDTMF(uuid, key);
+  /**
+   * @description when Phone call is active, Android control the audio service via connection service. so this function help to toggle the audio to Speaker or wired/ear-piece or vice-versa
+   * @param {*} uuid
+   * @param {*} routeSpeaker
+   * @returns Audio route state of audio service
+   */
+  toggleAudioRouteSpeaker = (uuid, routeSpeaker) => isIOS ? null : RNCallKeepModule.toggleAudioRouteSpeaker(uuid, routeSpeaker);
 
   getAudioRoutes = (uuid) => RNCallKeepModule.getAudioRoutes(uuid);
 
